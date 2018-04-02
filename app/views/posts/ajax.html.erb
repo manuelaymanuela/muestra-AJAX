@@ -1,0 +1,19 @@
+<h1>Prueba de Ajax 1, 2, 3</h1>
+
+<script type="text/javascript">
+  function loadPosts(){
+    $.getJSON("/posts.json", function(data){
+      var html = "";
+      $.each(data, function (index){
+	// alert(data[index].content);
+	html += "<b><i>" + data[index].content + "</i></b><br>";
+	}); 
+	// actualiza tus divs
+	  $("#posts").html(html);
+	});
+       }
+</script>
+
+<div id="posts">
+  <a href="javascript:loadPosts();">Aquí es donde van las entradas del blog</a>
+</div>
